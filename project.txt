@@ -1,0 +1,8 @@
+Project: IPL DASHBOARD
+Abstract: 1.This project presents an IPL dashboard designed for streamlined access to crucial cricket data. 
+          2.It includes three interactive buttons—"Team," "Points," and "Venues"—allowing users to view
+detailed team statistics, current points standings, and comprehensive venue information. 
+          3.The dashboard aims to offer an intuitive and efficient way for cricket enthusiasts to stay updated with 
+the latest IPL insights and analyses.
+
+Figma Link:https://www.figma.com/proto/6sODODIYjxdRaXCKeJpXjh/Untitled?node-id=1-2&starting-point-node-id=1%3A2&t=PGmbGrDr5eVXXmam-1

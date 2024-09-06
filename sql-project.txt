@@ -1,0 +1,36 @@
+Microsoft Windows [Version 10.0.19045.4780]
+(c) Microsoft Corporation. All rights reserved.
+
+C:\Users\AYYAPPA\Downloads\sqlite-tools-win-x64-3460100>sqlite3 students.db
+SQLite version 3.46.1 2024-08-13 09:16:08 (UTF-16 console I/O)
+Enter ".help" for usage hints.
+sqlite> create table students_details(id integer,name varchar(20),age integer);
+sqlite> insert into students_details(id,name,age) values(101,'nivi',21);
+sqlite> insert into students_details(id,name,age) values(102,'sijitha',27);
+sqlite> insert into students_details(id,name,age) values(103,'fargu',22);
+sqlite> insert into students_details(id,name,age) values(104,'aruna',23);
+sqlite> insert into students_details(id,name,age) values(105,'harsi',23);
+sqlite> select *from students_details;
+101|nivi|21
+102|sijitha|27
+103|fargu|22
+104|aruna|23
+105|harsi|23
+sqlite> update students_details set name='sijin' where name='sijitha';
+sqlite> update students_details set name='arun' where name='aruna';
+sqlite> select * from students_details;
+101|nivi|21
+102|sijin|27
+103|fargu|22
+104|arun|23
+105|harsi|23
+sqlite> delete from students_details where id=101;
+sqlite> select * from students_details;
+102|sijin|27
+103|fargu|22
+104|arun|23
+105|harsi|23
+sqlite> select * from students_details where age>=23;
+102|sijin|27|
+104|arun|23|
+105|harsi|23|

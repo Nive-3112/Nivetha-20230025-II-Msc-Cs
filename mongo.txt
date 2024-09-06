@@ -1,0 +1,155 @@
+test> use employee
+switched to db employee
+employee> db.employees.insertOne({id:101,name:"Nivetha",salary:10})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da7baaf34d62b13f2710bc')
+}
+employee> db.employees.insertOne({id:102,name:"Farghana",salary:20})
+{
+  acknowledged: true,
+  insertedId: ObjectId('66da7c43f34d62b13f2710bd')
+}
+employee> db.employees.insertMany([{id:103,name:"Sijin",salary:30},{id:105,name:"Arun",salary:40}])
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId('66da7cb6f34d62b13f2710be'),
+    '1': ObjectId('66da7cb6f34d62b13f2710bf')
+  }
+}
+employee> db.employees.find()
+[
+  {
+    _id: ObjectId('66da7baaf34d62b13f2710bc'),
+    id: 101,
+    name: 'Nivetha',
+    salary: 10
+  },
+  {
+    _id: ObjectId('66da7c43f34d62b13f2710bd'),
+    id: 102,
+    name: 'Farghana',
+employee> db.employees.find().skip(1)
+[
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710be'),
+    id: 103,
+    name: 'Sijin',
+    salary: 30
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710bf'),
+    id: 105,
+    name: 'Ammu',
+    salary: 40
+  }
+]
+    salary: 20
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710be'),
+    id: 103,
+    name: 'Sijin',
+    salary: 30
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710bf'),
+    id: 105,
+    name: 'Arun',
+    salary: 40
+  }
+]employee> db.employees.updateOne({name:"Arun"},{$set:{name:"Ammu"}})
+employee> db.employees.updateOne({name:"Farghana"},{$set:{name:"Thangam"}})
+{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}
+employee> db.employees.find()
+[
+  {
+    _id: ObjectId('66da7baaf34d62b13f2710bc'),
+    id: 101,
+    name: 'Nivetha',
+    salary: 10
+  },
+  {
+    _id: ObjectId('66da7c43f34d62b13f2710bd'),
+    id: 102,
+    name: 'Thangam',
+    salary: 20
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710be'),
+    id: 103,
+    name: 'Sijin',
+    salary: 30
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710bf'),
+    id: 105,
+    name: 'Ammu',
+    salary: 40
+  }
+employee> db.employees.deleteOne({id:101})
+{ acknowledged: true, deletedCount: 1 }
+employee> db.employees.find()
+[
+  {
+    _id: ObjectId('66da7c43f34d62b13f2710bd'),
+    id: 102,
+    name: 'Thangam',
+    salary: 20
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710be'),
+    id: 103,
+    name: 'Sijin',
+    salary: 30
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710bf'),
+    id: 105,
+    name: 'Ammu',
+    salary: 40
+  }
+]employee> db.employees.find().skip(1)
+[
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710be'),
+    id: 103,
+    name: 'Sijin',
+    salary: 30
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710bf'),
+    id: 105,
+    name: 'Ammu',
+employee> db.employees.find().sort({name:1})
+[
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710bf'),
+    id: 105,
+    name: 'Ammu',
+    salary: 40
+  },
+  {
+    _id: ObjectId('66da7cb6f34d62b13f2710be'),
+    id: 103,
+    name: 'Sijin',
+    salary: 30
+  },
+  {
+    _id: ObjectId('66da7c43f34d62b13f2710bd'),
+    id: 102,
+    name: 'Thangam',
+    salary: 20
+  }
+]
+
+    salary: 40
+  }
+]
